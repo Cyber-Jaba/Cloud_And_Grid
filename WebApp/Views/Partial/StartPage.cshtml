@@ -1,0 +1,54 @@
+﻿<style type="text/css">
+    body {
+        background: rgb(255, 255, 255);
+        /*background: -webkit-linear-gradient(90deg, rgba(13,17,59,1) 0%, rgba(40,53,147,1) 50%, rgba(13,17,59,1) 100%);*/
+        /*background: linear-gradient(90deg, rgba(13,17,59,1) 0%, rgba(40,53,147,1) 50%, rgba(13,17,59,1) 100%);*/
+        /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d113b",endColorstr="#0d113b",GradientType=1);*/
+    }
+
+
+    #start {
+        background: rgb(13,17,59);
+        color: white;
+    }
+
+    #exampleFormControlInput1 {
+        background: rgb(13,17,59);
+        color: white;
+    }
+
+    #greetings {
+        color: black;
+        text-align: center;
+        padding-bottom: 48px;
+    }
+
+</style>
+
+
+
+<div class="container" id="start_page">
+
+    <div class="row justify-content-center" id="greetings">
+        <div class="col-12 align-self-center ">
+            <span>Welcome to picture generator!</span>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 align-self-center">
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter the name of image">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 align-self-center">
+            <div class="d-grid gap-2">
+                <button class="btn btn-light" type="button" onclick="@{
+                    }" id="start">
+                    Here we go!
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
