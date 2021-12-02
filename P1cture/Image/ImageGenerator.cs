@@ -1,6 +1,7 @@
 ﻿namespace P1cture.Image.JSON
 {
     using DeepAI; // Add this line to the top of your file
+    using P1cture.Image.ExtendMagic;
     using P1cture.Image.Pixelate;
     using System.Drawing;
     using System.Drawing.Imaging;
@@ -17,7 +18,7 @@
             {
                 text = description,
             });
-            var json =api.objectAsJsonString(resp);
+            var json = api.objectAsJsonString(resp);
             var responce = Responce.FromJson(json);
             return responce.OutputUrl;
         }
@@ -25,15 +26,15 @@
         {
             Bitmap bImage = GetImageFromURI(uri);  //Your Bitmap Image
             Size imageSize = bImage.Size;
-            NormalPixelate.ApplyNormalPixelate(ref bImage,new Size(15,15));
-            bImage=new Bitmap(bImage,imageSize);
-            
+            NormalPixelate.ApplyNormalPixelate(ref bImage, new Size(15, 15));
+            bImage = new Bitmap(bImage, imageSize);
+
             MemoryStream ms = new MemoryStream();
             bImage.Save(ms, ImageFormat.Jpeg);
             byte[] byteImage = ms.ToArray();
             return Convert.ToBase64String(byteImage); //Get Base64
         }
-		public Bitmap GetImageFromURI(Uri uri)
+        public Bitmap GetImageFromURI(Uri uri)
         {
             WebClient wc = new();
             byte[] bytes = wc.DownloadData(uri);
