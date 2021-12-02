@@ -1,0 +1,63 @@
+﻿<style type="text/css">
+	
+	#select_image{
+		text-align: center;
+		background: rgb(13,17,59);
+		color: white;
+	}
+
+	#download_image{
+		text-align: center;
+		background: rgb(13,17,59);
+		color: white;
+	}
+
+	#cp{
+		height:  auto;
+		min-width: 100%;
+		max-width: 100%;
+		padding-top: 10px;
+	}
+
+	#lcp{
+		color: grey;
+	}
+</style>
+
+
+<div class="container">
+	
+	<div class="row justify-content-center">
+		<div class="col">
+			<span>
+				
+			</span>
+		</div>
+	</div>
+ 
+ 	<div class="row justify-content-center">
+		<div class="col-6 align-self-start">
+			<select class="form-select" aria-label="Default select example" id = "select_image">
+				<option value = "" disabled selected>Choose image resolution</option>
+				<option value="1">Big device</option>
+				<option value="2">Medium</option>
+				<option value="3">Small</option>
+				<option value="4">Mobile</option>
+			</select>
+		</div>
+		
+	
+	<div class="row justify-content-center">
+		<div class="col-6">
+			<div class="text-center">
+				<img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__480.jpg" id = "cp" alt="Check if your browser updated">
+				      <label for="cp">
+				      	<span id="lcp">Click on image for downloading</span>
+				      </label>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</div>
