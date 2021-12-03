@@ -9,6 +9,7 @@
 @{
     ViewData["Title"] = "Home Page";
 
+    ViewData["Pixalate"] = @ViewBag.Pixalate;
 }
 
 @*
@@ -24,8 +25,11 @@
 {
     <partial name="../Partial/StartPage" />
 }
-@if (@ViewBag.Text != null)
+@if (@ViewBag.Text != null && @ViewBag.OneImage == null)
 {
     <partial name="../Partial/ProcessingPage" />
 }
-
+@if (@ViewBag.Text != null && @ViewBag.OneImage != null)
+{
+    <partial name="../Partial/ResultPage" view-data="ViewData" />
+}
