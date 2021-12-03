@@ -1,0 +1,31 @@
+﻿@using Microsoft.JSInterop
+@using Newtonsoft.Json
+@using WebApp.Controllers
+@using WebApp.Image.ExtendMagic
+@using System.Drawing
+@using WebApp.Image.Globals
+@using Microsoft.AspNetCore.Http
+@inject IJSRuntime JS
+@{
+    ViewData["Title"] = "Home Page";
+
+    ViewData["Pixalate"] = @ViewBag.Pixalate;
+}
+
+@*
+
+    <partial name="../Partial/ResultPage" />*@
+
+@*Тут ніхуя не трогаєш!
+    Треба розмітка в StartPage,ProcessingPage,ResultPage
+*@
+
+<br />
+@if (@ViewBag.Text == null)
+{
+    <partial name="../Partial/StartPage" />
+}
+@if (@ViewBag.Text != null && @ViewBag.OneImage == null)
+{
+    <partial name="../Partial/ProcessingPage" />
+}
