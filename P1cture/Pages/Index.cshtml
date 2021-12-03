@@ -1,4 +1,4 @@
-﻿@page
+@page
 @using Newtonsoft.Json
 @using P1cture.Image.ExtendMagic
 @using System.Drawing
@@ -12,17 +12,3 @@
     void Test() => Redirect("https://google.com");
 
 }
-
-@*@if (HttpContext.Session.Get(Key.Get).Length > 0)
-    {
-    }
-    else
-    {
-
-    }*@
-<partial name="StartPage" />
-
-@*Тут ніхуя не трогаєш!
-    Треба розмітка в StartPage,ProcessingPage,ResultPage
-*@
-<button onclick="@{Test();}">Test</button>
