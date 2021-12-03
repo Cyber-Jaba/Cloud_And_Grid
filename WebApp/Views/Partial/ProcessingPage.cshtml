@@ -105,26 +105,27 @@
     </div>
 </div>
 <label id="testf1">asdsad</label>
+
 @{
     WebApp.Image.JSON.ImageGenerator imageGenerator = new();
     var s = imageGenerator.GenerateAndGetImagePath("frog");
-    var d = imageGenerator.GetBase64PixalatedImage(s);
-}
 
-<img src="@d" />
+    var src = $"data:image/gif;base64,{imageGenerator.GetBase64PixalatedImage(s)}";
+}
+<img src="@src" />
 <img src="@s" />
 
 
 <script type="text/javascript">
     s=0;
 
-        async function GetUser() {
-        const response = await fetch("/Home/IsDone", {
+        function GetUser() {
+        const response = fetch("/Home/IsDone", {
             method: "GET",
             headers: { "Accept": "application/json" }
         });
         if (response.ok === true) {
-            const data = await response.json();
+            const data = response.json();
 
             if(data0){
                 clearInterval(timerId);
