@@ -111,11 +111,6 @@
 
     var allObjectDownloaded = false;
 }
-
-@*<img src="@src" />
-    <img src="@s" />*@
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
@@ -133,24 +128,7 @@
 </div>
 
 <script type="text/javascript">
-    //s=0;
 
-    //    function GetUser() {
-    //    const response = fetch("/Home/IsDone", {
-    //        method: "GET",
-    //        headers: { "Accept": "application/json" }
-    //    });
-    //    if (response.ok === true) {
-    //        const data = response.json();
-
-    //        if(data0){
-    //            clearInterval(timerId);
-
-    //    window.location.href= '@Url.Action("ItsFine", "Home")';
-    //        }
-    //    }
-    //    }
-          // повторить с интервалом 2 секунды
     let timerId = setInterval(() =>{
         if(@allObjectDownloaded){
         document.getElementById("cubeMaster").style.display='none';
