@@ -2,7 +2,7 @@
 {
     public static class Key
     {
-        public static string Get => "jaba";
+        public static string GetText => "jaba";
 
     }
 }

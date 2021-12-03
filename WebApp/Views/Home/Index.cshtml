@@ -1,39 +1,31 @@
-﻿@using Newtonsoft.Json
+﻿@using Microsoft.JSInterop
+@using Newtonsoft.Json
+@using WebApp.Controllers
 @using WebApp.Image.ExtendMagic
 @using System.Drawing
 @using WebApp.Image.Globals
 @using Microsoft.AspNetCore.Http
+@inject IJSRuntime JS
 @{
     ViewData["Title"] = "Home Page";
-    //HttpContext.Session.Set("", "T".ToByteArray());
-    //SessionExample.SetSession();
-
-    //void Test() => Response.Redirect(new Uri(Request.Url, Url.Action("action", "controller")).ToString());
 
 }
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-@*@if (HttpContext.Session.Get(Key.Get).Length > 0)
-    {
-    }
-    else
-    {
 
-    }*@
-<partial name="../Partial/StartPage" />
-<partial name="../Partial/ProcessingPage" />
-<partial name="../Partial/ResultPage" />
+@*
+
+    <partial name="../Partial/ResultPage" />*@
 
 @*Тут ніхуя не трогаєш!
     Треба розмітка в StartPage,ProcessingPage,ResultPage
 *@
-@Html.ActionLink("Jaba", "Index", "Home")
-<button onclick="@{
-    //Test();
-}">
-    Test
-</button>
 
-<scri[]
+<br />
+@if (@ViewBag.Text == null)
+{
+    <partial name="../Partial/StartPage" />
+}
+@if (@ViewBag.Text != null)
+{
+    <partial name="../Partial/ProcessingPage" />
+}
+

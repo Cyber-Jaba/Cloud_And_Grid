@@ -44,11 +44,17 @@
     <div class="row justify-content-center">
         <div class="col-6 align-self-center">
             <div class="d-grid gap-2">
-                <button class="btn btn-light" type="button" onclick="@{
-                    }" id="start">
+                <button class="btn btn-light" type="button" onclick="transferData()" id="start">
                     Here we go!
                 </button>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function transferData(){
+        var text=document.getElementById("exampleFormControlInput1").value;
+        window.location.href= '@Url.Action("StartProcessing", "Home")' + '/' + text;
+
+    }
+</script>
