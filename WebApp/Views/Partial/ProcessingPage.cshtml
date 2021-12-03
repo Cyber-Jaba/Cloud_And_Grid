@@ -85,7 +85,7 @@
 </style>
 
 
-<div class="container">
+<div id="cubeMaster" class="container">
     <div class="row justify-content-center">
         <div class="col-6 align-self-center">
             <div class="ratio ratio-1x1">
@@ -104,43 +104,59 @@
         </div>
     </div>
 </div>
-<label id="testf1">asdsad</label>
-
 @{
     WebApp.Image.JSON.ImageGenerator imageGenerator = new();
-    var s = imageGenerator.GenerateAndGetImagePath("frog");
-
+    var s = imageGenerator.GenerateAndGetImagePath(@ViewBag.Text);
     var src = $"data:image/gif;base64,{imageGenerator.GetBase64PixalatedImage(s)}";
-}
-<img src="@src" />
-<img src="@s" />
 
+    var allObjectDownloaded = false;
+}
+
+@*<img src="@src" />
+    <img src="@s" />*@
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="text-center">
+                <img src="@src" class="col" alt="Check if your browser updated">
+                <img src="@s" class="col" alt="Check if your browser updated">
+                <label for="cp">
+                    <span id="lcp">Click on image for downloading</span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 <script type="text/javascript">
-    s=0;
+    //s=0;
 
-        function GetUser() {
-        const response = fetch("/Home/IsDone", {
-            method: "GET",
-            headers: { "Accept": "application/json" }
-        });
-        if (response.ok === true) {
-            const data = response.json();
+    //    function GetUser() {
+    //    const response = fetch("/Home/IsDone", {
+    //        method: "GET",
+    //        headers: { "Accept": "application/json" }
+    //    });
+    //    if (response.ok === true) {
+    //        const data = response.json();
 
-            if(data0){
-                clearInterval(timerId);
+    //        if(data0){
+    //            clearInterval(timerId);
 
-        window.location.href= '@Url.Action("ItsFine", "Home")';
-            }
-        }
-        }
-
-        GetUser();
-
+    //    window.location.href= '@Url.Action("ItsFine", "Home")';
+    //        }
+    //    }
+    //    }
           // повторить с интервалом 2 секунды
     let timerId = setInterval(() =>{
-        GetUser()
-        s++
+        if(@allObjectDownloaded){
+        document.getElementById("cubeMaster").style.display='none';
+
+                clearInterval(timerId);
+        }
     }, 1000);
 
 </script>
